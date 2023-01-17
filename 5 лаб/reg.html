@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Регистрация
+    </title>
+
+    <link rel="stylesheet" href="reg.css">
+  </head>
+  <body>
+
+    <div>
+    <header class="header">
+
+            <div class="log">
+             </div>
+
+             <div class="header_display">
+<div>
+
+                    <a class="link" href="#">
+                        Войти
+                    </a>
+
+                    <a class="link" href="#">
+                        Зарегистрироваться
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </div>
+    <div class="page">
+        <h1>Регистрация</h1>
+        <div class="content">
+            <div class="row">
+                <form class="input_text_field">
+                    <h2>Имя</h2>
+                    <input id="Name" class="input_text" type="text" required>
+                </form>
+
+                <form class="input_text_field">
+                    <h2>Фамилия</h2>
+                    <input id="surname" class="input_text" type="text" required>
+                </form>
+            </div>
+
+            <div class="row">
+                <form class="input_text_field">
+                    <h2>Логин</h2>
+                    <input id="login" class="input_text" type="text" required>
+                    <div class="conditions">
+                        <div class="condition">
+                            
+                            <span id="conl1" class="condition_text_x">Только буквы, цифры и символы @.+-_</span>
+                        </div>
+                        <div class="condition">
+                           
+                            <span id="conl2" class="condition_text_x">Не более 150 символов и не меньше 5</span>
+                        </div>
+                    </div>
+                </form>
+
+                <form class="input_text_field">
+                    <h2>E-mail</h2>
+                    <input id="mail" class="input_text" type="text" required>
+                </form>
+            </div>
+            
+            <div class="row">
+                <form class="input_text_field">
+                    <h2>Пароль</h2>
+                    <input id="password" class="input_password" type="password" required>
+                    <div class="conditions">
+                        <div class="condition
+                            <span id="conp1" class="condition_text_x">Минимум 8 символов</span>
+                        </div>
+                        <div class="condition">
+                            
+                            <span id="conp2" class="condition_text_x">Не может состоять только из цифр</span>
+                        </div>
+                        <div class="condition">
+             
+                <form class="input_text_field">
+                    <h2>Подтверждение пароля</h2>
+                    <input id="sec_password" class="input_password" type="password" required>
+                    <div class="conditions">
+                        <div class="condition">
+                            
+                            <span id="consp1" class="condition_text_x">Пароли не совпадают</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="checkbox_field">
+                <input class="checkbox" type="checkbox" required>
+                <p class="checkbox_text">Даю своё согласие на обработку персональных данных</p>
+            </div>
+            <button class="submit_button" disabled>Зарегистрироваться</button>
+        </div>
+    </div>
+ <footer class="footer">
+
+    <div class="footer_container">
+
+        <div class="footer_links">
+
+            <a class="footer_link" href="#">
+                Об авторе
+            </a>
+
+            <a class="footer_link" href="#">
+                Технологии
+            </a>
+
+        </div>
+
+        <div class="info_blog">
+
+                <p>
+                    © Blog, 2022
+                </p>
+
+        </div>
+
+    </div>
+ </footer>
+ <script src="reg.js"></script>
+
+</body>
+</html>

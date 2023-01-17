@@ -1,0 +1,126 @@
+let Name = document.querySelector("#Name");
+let surname = document.querySelector("#surname");
+let email = document.querySelector("#mail");
+let log = document.querySelector("#login");
+let pass = document.querySelector("#password");
+let user = { Name: " ", surname: " ", log: " ", mail: " ", pass: " " };
+
+function SaveInLS(){
+    user = {Name: Name.value, surname: surname.value, log: log.value, mail:mail.value, pass: pass.value };
+    localStorage.setItem("user", JSON.stringify(user));
+}
+
+Name.onchange = function (e) {
+
+    e.preventDefault();
+    SaveInLS();
+}
+
+surname.onchange = function (e) {
+
+    e.preventDefault();
+    SaveInLS();
+}
+
+email.onchange = function (e) {
+
+    e.preventDefault();
+    SaveInLS();
+}
+
+log.onchange= function (e) {
+let p = document.querySelectorAll("span");
+let flag = false;
+for (let i = 0; i < p.length; i++) {
+    if (p[i].style.color=== 'rgba(238, 34, 34, 0.9)') {
+        flag = true;
+    }
+}
+if(flag)
+{
+    alert("Ошибка в данных");
+}
+else
+{
+    e.preventDefault();
+    SaveInLS();
+}
+}
+
+pass.onchange= function (e) {
+    let p = document.querySelectorAll("span");
+    let flag = false;
+    for (let i = 0; i < p.length; i++) {
+        if (p[i].style.color=== 'rgba(238, 34, 34, 0.9)') {
+            flag = true;
+        }
+    }
+    if(flag)
+    {
+        alert("Ошибка в данных");
+    }
+    else
+    {
+        e.preventDefault();
+        SaveInLS();
+    }
+    }
+
+
+
+
+ function LoginVal() {
+    let re = /^[а-яА-Яa-zA-Z0-9\-@.+_]+$/.test(log.value);
+    }
+    
+
+log.addEventListener('input', function () {
+    LoginVal();
+});
+
+function PassVal() {
+    let reg = /^\d+$/.test(pass.value);
+
+}
+
+
+password.addEventListener('input', function () {
+    PassVal();
+});
+
+let sec_password = document.querySelector("#sec_password");
+sec_password.addEventListener('input', function () {
+    if (this.value !== '' && password.value !== '') {
+
+      
+});
+
+let ch = document.querySelector(".checkbox");
+let b = document.querySelector(".submit_button");
+
+function ValueCheckBox(CheckBox) {
+    if (!CheckBox.checked) {
+        b.disabled = true;
+        b.style.color='#CCCCCC;';
+    } else {
+        b.disabled = false;
+        b.style.background='#624C91';
+    }
+}
+
+ch.addEventListener('change', function () { ValueCheckBox(this) });
+
+
+window.addEventListener('load', function() {
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+        Name.value = user.Name;
+        surname.value = user.surname;
+        login.value = user.log;
+        email.value = user.mail;
+        password.value = user.pass;
+    }
+    LoginVal();
+    PassVal();
+});
